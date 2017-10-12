@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\UnitRumah;
 
 class ProductController extends Controller
 {
@@ -12,13 +13,13 @@ class ProductController extends Controller
     try{
                 
         $this->validate($request,[
-            'Kavling' => 'required',
-            'Blok' => 'required',
-            'No_Rumah' => 'required',
-            'Harga_Rumah' => 'required',
-            'Luas_Tanah' => 'required',
-            'Luas_Bangunan' => 'required',
-            'customers_id' => 'required',
+            'kavling' => 'required',
+            'blok' => 'required',
+            'no_rumah' => 'required',
+            'harga_rumah' => 'required',
+            'luas_tanah' => 'required',
+            'luas_bangunan' => 'required',
+            'customer_id' => 'required',
                                 
                             
                                 
@@ -26,13 +27,13 @@ class ProductController extends Controller
         ]);
         
         $unit = new UnitRumah;
-        $unit->Kavling =  $request->input('Kavling');
-        $unit->Blok = $request->input('Blok');
-        $unit->No_Rumah =$request->input('No_Rumah');
-        $unit->Harga_Rumah= $request->input('Harga_Rumah');
-        $unit->Luas_Tanah=$request->input('Luas_Tanah');
-        $unit->Luas_Bangunan=$request->input('Luas_Bangunan');
-        $unit->customers_id=$request->input('customers_id');
+        $unit->kavling =  $request->input('kavling');
+        $unit->blok = $request->input('blok');
+        $unit->no_rumah =$request->input('no_rumah');
+        $unit->harga_rumah= $request->input('harga_rumah');
+        $unit->luas_tanah=$request->input('luas_tanah');
+        $unit->luas_bangunan=$request->input('luas_bangunan');
+        $unit->customer_id=$request->input('customer_id');
         $unit->save();
         return response()->json(['message' =>'Berhasil'], 200);
             }

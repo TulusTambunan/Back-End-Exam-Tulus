@@ -27,5 +27,5 @@ Route::group(['prefix' => 'unit'], function() {
             return response()->json($List,200);
     });
     Route::post('/createnewunit', 'ProductController@CreateNewUnit' );
-    Route::get('/deleteunit', 'ProductController@DeleteUnit' );
+    Route::post('/deleteunit', 'ProductController@DeleteUnit' );
  });
